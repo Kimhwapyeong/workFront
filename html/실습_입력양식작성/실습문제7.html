@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+</head>
+<body>
+    <h1>주문하기</h1>
+    <form>
+        <p><label for="name">고객명 : </label><input type="text" name="name" id="name" autofocus required></p>
+        <p><label for="phone">전화번호 : </label><input type="tel" name="phone" id="phone" required></p>
+        <p><label for="email">E-mail : </label><input type="email" name="email" id="email"></p>
+   
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <!-- //label은 id로 지정해주어야 한다.
+                label을 지정해주면 label을 클릭해도 체크된다. -->
+            <input type="radio" name="size" id='size_s' value='small'><label for="size_s">Small</label><br><br> <!-- // 서버에 전달되는 값은 value  값 -->
+            <input type="radio" name="size" id='size_m' value='Medium'><label for="size_m">Medium</label> <br><br>
+            <input type="radio" name="size" id='size_l' value='Large' checked><label for="size_l">Large</label>
+        </fieldset>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name="toping" id='toping_b' value='bacon'><label for="toping_b">베이컨</label><br><br>
+            <input type="checkbox" name="toping" id='toping_c' value='cheese'><label for="toping_c">치즈</label><br><br>
+            <input type="checkbox" name="toping" id='toping_o' value='onion'><label for="toping_o">양파</label><br><br>
+            <input type="checkbox" name="toping" id='toping_m' value='mushroom'><label for="toping_m">버섯</label> 
+        </fieldset>
+        <br>
+    
+        <label for='time'>희망 배송 시간 : </label>
+        <input type="time" name="time" id='time' required>
+        <br><br>
+        <label for='tarea'>배송 시 요청 사항 : </label>
+        <textarea name="tarea" id="tarea" cols="10" rows="3"></textarea>
+        
+        <br><br>
+        <input type="submit" value="주문하기">
+    </form>
+    
+</body>
+</html>

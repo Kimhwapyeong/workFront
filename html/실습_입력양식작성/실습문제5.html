@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>예약 접수</title>
 	<style>
+		/* 목록에서 블릿을 제거하는 역할 */
 		ul {
 			list-style:none;
 		}
@@ -18,6 +19,17 @@
 </head>
 <body>
 	<h1>예약 정보</h1>
-	hint. 목록태그를 이용하면 들여쓰기가 가능 합니다
+	<!-- // 사용자가 입력한 값을 서버에 전달하는 역할 (form 태그) -->
+	<form action='실습문제6.html' method='get'>
+		<ul>
+			<li>이름 
+				<input type='text' id='name' name='name'></li>
+			<li>휴대폰
+				<input type='tel' id='phone' name='phone'></li>
+			<li>이메일
+				<input type='email' id='email' name='email'></li>
+			<li><input type='submit' value='예약하기'></li>
+		</ul>
+	</form>
 </body>
 </html>
