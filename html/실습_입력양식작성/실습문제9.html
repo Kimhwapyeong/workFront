@@ -8,55 +8,73 @@
 </head>
 <body>
     <h1>회원가입</h1>
-    <fieldset>
-        <legend>필수 입력 사항</legend>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <td><input type="text" name="id" id="id" required
-                        placeholder='아이디 10글자 이내'> <button>중복확인</button></td>
-                </tr>
-                <tr>
-                    <th>비밀번호</th>
-                    <td><input type="password" name="pw" id="pw" required
-                        placeholder='영문,숫자,특수문자 포함 8자 이상'></td>
-                </tr>
-                <tr>
-                    <th>비밀번호 확인</th>
-                    <td><input type="password" name="pw1" id="pw1" required></td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td><input type="email" name="email" id="email">
-                        <select name="" id="">
-                            <option value="">직접입력</option>
-                        </select>    
-                    </td>
-                </tr>
-            </table>    
-    </fieldset>
-    <fieldset>
-        <legend>추가정보</legend>
-        <p><label>프로필 사진 : <input type="file" name="file" id="file"></label></p> 
-        <p><label>성별 : <input type="radio" name="M" id="M" value='M' checked>남자
-                        <input type="radio" name="F" id="F" value='F'>여자</label></p> 
-        <p><label>생년월일 : <input type="date" name="date" id="date"></label></p>
-        <p>취미 : <br>
-        <input type="checkbox" name="baseball" id="baseball"><label for="baseball">야구</label> 
-        <input type="checkbox" name="basketball" id="basketball"><label for="basketball">농구</label> 
-        <input type="checkbox" name="soccer" id="soccer"><label for="soccer">축구</label><br>
-        <input type="checkbox" name="study" id="study" checked><label for="study">공부</label> 
-        <input type="checkbox" name="listenMusic" id="listenMusic"><label for="listenMusic">음악감상</label><br> 
-        <input type="checkbox" name="gita" id="gita"><label for="gita">기타 : </label><input type="text" name="" id="">
-        </p>
-
-        <p><label>자기소개<br>
-            <textarea name="intro" id="intro" cols="40" rows="4"></textarea>
-        </label></p>
-    </fieldset>
-    <br>
-    <input type="submit" value="회원가입">
-    <input type="reset" value="다시입력">
-    <button>이전으로</button>
+    <form>
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+                <table>
+                    <tr>
+                        <th><label for="id">ID</label></th>
+                        <td><input type="text" name="id" id="id" required
+                            placeholder='아이디 10글자 이내'> <button>중복확인</button></td> <!-- // 선생님은 열을 하나 추가해서 중복확인 하심 -->
+                    </tr>
+                    <tr>
+                        <th><label for="pw">비밀번호</label></th>
+                        <td><input type="password" name="pw" id="pw" required
+                            placeholder='영문,숫자,특수문자 포함 8자 이상'></td>
+                    </tr>
+                    <tr>
+                        <th><label for="pwCheck">비밀번호 확인</label></th>
+                        <td><input type="password" name="pwCheck" id="pwCheck" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">Email</label></th>
+                        <td><input type="email" name="email" id="email">
+                            <select name="emailAddr" id="emailAddr">
+                                <option value="etc" selected>직접입력</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="daum.net">daum.net</option>
+                            </select>    
+                        </td>
+                    </tr>
+                </table>    
+        </fieldset>
+        <fieldset>
+            <legend>추가정보</legend>
+            <ul>
+                <li>
+                    <p><label>프로필 사진 : <input type="file" name="file" id="file"></label></p> 
+                </li>
+                <li>
+                    <p><label>성별 : <input type="radio" name="gender" id="gender" value='M' checked>남자
+                                    <input type="radio" name="gender" id="gender" value='F'>여자</label></p> 
+                </li>    
+                <li>
+                    <p><label>생년월일 : <input type="date" name="date" id="date"></label></p>
+                </li>
+                <li>
+                    <p>취미 : <br>
+                    <input type="checkbox" name="hobby" id='hobby1' value="baseball"><label for="hobby1">야구</label> 
+                    <input type="checkbox" name="hobby" id='hobby2' value="basketball"><label for="hobby2">농구</label> 
+                    <input type="checkbox" name="hobby" id='hobby3' value="soccer"><label for="hobby3">축구</label><br>
+                    <input type="checkbox" name="hobby" id='hobby4' value="study" checked><label for="hobby4">공부</label> 
+                    <input type="checkbox" name="hobby" id='hobby5' value="listenMusic"><label for="hobby5">음악감상</label><br> 
+                    <input type="checkbox" name="hobby" id='hobby6' value="etc"><label for="hobby6">기타 : </label><input type="text" name="etcTxt" id="etcTxt">
+                </li>
+                <li>
+                    <p><label for='intro'>자기소개</label><br>
+                        <textarea name="introduce" id="introduce" cols="50" rows="5"
+                            style='resize:none;'></textarea></p>
+                </li>
+            </ul>
+            </p>
+    
+        </fieldset>
+        <br>
+        <input type="submit" value="회원가입">
+        <input type="reset" value="다시입력">
+        <button>이전으로</button>
+        <!-- <input type="button" value="이전으로"> -->
+    </form>
 </body>
 </html>

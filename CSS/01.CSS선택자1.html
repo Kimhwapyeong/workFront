@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 1</title>
+    <style>
+        /* CSS 주석 : ctrl + / */
+        /* 모든 요소 선택자 테스트 */
+        * {
+            /* color: cyan; */
+            list-style: none;  /* // 리스트 블릿(순서)을 제거 */
+        }
+
+        /* 태그 선택자 테스트 */
+        pre {
+            color: red;
+        }
+
+        /* 아이디 선택자 테스트 */
+        #id1 {
+            /* 배경색상 지정 */
+            background-color: yellow;
+            /* 글자색상 지정 */
+            color: tomato;
+        }
+
+        #id3 {
+            background-color: aquamarine;
+            color: blueviolet;
+        }
+
+        /* 클래스 선택자 테스트 */
+        .class1 {
+            background-color: cadetblue;
+            color: wheat;
+        }
+
+        .red {
+            color: red;
+            /* 폰트 두께 지정 */
+            font-weight: 900;
+        }
+
+        .title{
+            /* 폰트 크기 변경 */
+            font-size: 1.5em;
+        }
+
+        /* 그룹 선택자
+            같은 스타일을 사용하는 선택자를 한꺼번에 정의
+            ,를 이용하여 선택자를 나열 */
+        #id3, #id4, .class5 {
+            /* 정렬(가로) */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자 1</h1>
+    <!-- 
+        선택자란?
+        특정 HTML 요소를 선택할 때 사용하는 기능으로,
+        요소를 선택하여 원하는 스타일과 기능을 적용할 수 있다.
+    -->
+    <hr>
+
+    <h2>1. 모든 선택자(*)</h2>
+    HTML 문서 안의 모든 태그를 선택할 때 전체 선택자를 사용한다.
+    
+    <br>
+    (pre태그 : 작성한 그대로 화면에 보여줌)
+    <pre>
+        * {
+            스타일 속성: 값;
+            스타일 속성: 값;
+            ...
+        }
+    </pre>
+
+    <h2>2. 태그 선택자</h2>
+    태그명을 이용해 요소를 선택
+    <pre>
+        태그명 {
+            스타일 속성: 값;
+            스타일 속성: 값;
+            ...
+        }
+    </pre>
+    
+    <h2>3. 아이디 선택자(#아이디)</h2>
+    요소의 id속성을 이용하여 요소를 선택
+    (#아이디속성값)
+    <pre>
+        #아이디명 {
+            스타일 속성: 값;
+            스타일 속성: 값;
+            ...
+        }
+    </pre>
+
+    <h2>4. 클래스 선택자(.클래스명)</h2>
+    HTML 문서 내에서 여러 개의 태그를 동일한 클래스명으로 지정하여 선택할 때 사용한다.
+    <pre>
+        .클래스명 {
+            스타일 속성: 값;
+            스타일 속성: 값;
+            ...
+        }
+    </pre>
+
+    <ol>
+        <li id='id1'>아이디 선택자 테스트1</li>
+        <li id='id2'>아이디 선택자 테스트2</li>
+        <li id='id3'>아이디 선택자 테스트3</li>
+        <li id='id4'>아이디 선택자 테스트4</li>
+        <li id='id5'>아이디 선택자 테스트5</li>
+    </ol>
+
+    <ul>
+        <li class='class1'>클래스 선택자 테스트1</li>
+        <li class='class2 red'>클래스 선택자 테스트2</li>
+        <li class='class3'>클래스 선택자 테스트3</li>
+        <li class='class4 title'>클래스 선택자 테스트4</li>
+        <li class='class5'>클래스 선택자 테스트5</li>
+    </ul>
+
+</body>
+</html>
