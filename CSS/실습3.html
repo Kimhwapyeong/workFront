@@ -1,36 +1,122 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습3</title>
     <style>
-        .main_image{
+        *{
+            /* 상하, 좌우 */
+            margin: 0px auto;
+        }
+        h1{
+            /* 배경색 지정 */
+            background-color: #000;
+            /* 폰트 색상 변경 */
+            color: #fff;
+            /* 폰트 사이즈 변경 */
+            font-size: 1em;
+            /* 요소의 안쪽 여백 지정 */
+            padding: 10px;
+        }
+
+        h2{
+            margin: 20px;
+            color: red;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #container{
+            width: 640px;
+            margin: 0px auto;
+
+        }
+
+        p{
+            font-size: 1.1em;
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.7em;
+            margin: 20px;
+        }
+
+        .imgBox{
+            width: 100%;
+            height: 420px;
+            background-image: url('../html/images/apple-bg.jpg');
             position: relative;
         }
-        .main_image_text{
-            position:absolute;
-            top:315px;
-            width: 590px;
-            color: orange;
-            background-color: rgba(102, 102, 102, 0.3);
-            padding-left: 50px
-        }
-        #title{
+
+        #h2{
             color: white;
+            font-size: 2.1em;
+            text-align: left;
+            /* padding-left: 40px;
+            padding-top: 15px; */
+            padding-left: 40px;
         }
+
+        .text{
+            width: 100%;   
+            height: 170px;
+            background-color: rgba(70, 48, 48, 0.7);
+            position: absolute;
+            bottom: 30px;
+        }
+
+        #p{
+            text-align: left;
+            color: orange;
+            font-weight: 200;
+            padding-left: 25px;
+            
+        }
+
+        /* .imgBox{
+            width: 600px;
+            height: 400px;
+            background-image: url('../html/images/top copy.jpg');
+            border: 1px solid blue;
+            position: relative;  
+        }
+        
+        .txtBox{
+            width: 100%;
+            height: 170px;
+        } */
     </style>
 </head>
 <body>
-    <div class='main_image'>
-        <img src="../html/images/salad.jpg" alt="샐러드">
-        <div class='main_image_text'>
-            <p id='title'>가정용 꿀사과</p>
-            <p>흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로 입니다.<br> 
+
+    <div id='container'>
+
+        <div class='imgBox'>
+            <div class='text'>
+                <h2 id='h2'>가정용 꿀사과</h2>
+                <p id='p'>흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다. <br>
                 질좋은 사과를 저렴하게 즐겨보세요.</p>
+            </div>
         </div>
 
+        <!-- <img src="../html/images/top copy.jpg" alt="가정용꿀사과"> -->
+
+        <h1>확인하세요</h1>     
+        <h2>주문 및 배송</h2> 
+        <p>오후 2시 이전 주문건은 당일 발송합니다<br>
+        2시 이후 주문건은 다음날 발송합니다(주말 제외)</p> 
+    
+        <hr>
+        <h2>교환 및 환불</h2> 
+        <p>불만족시 100% 환불해 드립니다<br>
+        고객센터로 전화주세요</p> 
+        
+        <hr>
+        <h2>고객센터</h2> 
+        <p>0000-0000<br>
+        상담시간 : 오전 9시 ~ 오후 6시 (토/일, 공휴일 휴무)</p> 
     </div>
 </body>
 </html>
