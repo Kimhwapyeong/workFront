@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            /* li요소를 가로로 배치하는 방법 */
+            /* // 요소 간 빈 공간을 없애려면 float: left로 */
+            float: left;
+            /* display: inline-block; */
+            width: 100px;
+            height: 30px;
+            border: 1px solid red;
+        }
+        a{
+            /* 블럭처럼 크기를 지정하기 위해 inline block으로 변경 */
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            /* height과 동일한 값을 주어 세로 정렬 */
+            line-height: 30px;
+            
+            /* 가로 정렬 */
+            text-align: center;
+            /* a요소의 브라우저 기본 스타일 제거 */
+            text-decoration: none;
+            color: #777;
+            font-weight: 800;
+        }
+
+        /* 요소에 마우스가 올라왔을때 */
+        a:hover{
+            color: white;
+            background-color: red;
+        }
+        hr{
+            /* float 해제 */
+            clear: both;
+            border-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href='#'>메뉴1</a></li>
+        <li><a href='#'>메뉴2</a></li>
+        <li><a href='#'>메뉴3</a></li>
+        <li><a href='#'>메뉴4</a></li>
+    </ul>
+    <hr>
+</body>
+</html>
