@@ -1,0 +1,188 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+.wrap{
+    width: 1000px;
+    height: 700px;
+    /* border: 1px solid black; */
+    /* 큰박스 가운데 정렬 */
+    margin: 0px auto;
+}
+.wrap header{
+    width: 100%;
+    height: 120px;
+    /* background-color: antiquewhite; */
+}
+
+header #logo_img1{
+    width: 15%;
+    height: 75%;
+    float: left;
+    background: url(images/logo.jpg) no-repeat;
+    background-position: 30px;
+    /* background-color: aqua; */
+    /* background-size: cover; */
+}
+header #logo_img2{
+    width: 85%;
+    height: 75%;
+    float: left;
+    background: url(images/mainlogo.jpg) no-repeat;
+    background-position: 100px;
+    /* background-color: aquamarine; */
+    
+}
+header nav{
+    float: left;  /* // clear: both를 해도 된다. 아직 이 부분에 정확한 이해가 부족함 */
+    width: 100%;
+    height: 25%;
+    /* padding-top: 3px; */
+    background-color: rgb(79, 156, 79);
+}
+header nav ul{
+    padding: 0px;
+    list-style: none;
+}
+header nav ul li{
+    display: inline-block;
+}
+header nav ul li a{
+    display: inline-block;
+    width: 245px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    /* padding:1px 93px; */
+}
+header nav ul li a:hover{
+    background-color: darkgreen;
+    /* font-weight: 700; */
+}
+.wrap .main{
+    width: 100%;
+    height: 500px;
+    /* background-color: pink; */
+    margin-top: 10px;
+}
+.main #left-side{
+    width: 15%;
+    height: 100%;
+    background-color: aquamarine;
+    float: left;
+    background: url(images/left_img.jpg);
+    background-size: cover;
+}
+.main main{
+    width: 60%;
+    height: 100%;
+    float: left;
+    /* background-color: azure; */
+}
+.main #right-side{
+    width: 25%;
+    height: 100%;
+    float: left;
+    /* background-color: bisque; */
+}
+#login_wrap{
+    /* position: relative;
+    top: 10px; */
+
+    width: 100%;
+    height: 60px;
+    /* background-color: antiquewhite; */
+
+    /* 범위를 벗어나면 숨김 */
+    /* overflow: hidden; */
+}
+#login_form_input{
+    width: 65%;
+    /* px로 지정할 경우 부모와 상관없이 지정 */
+    /* %로 높이값을 지정할 경우 부모의 높이가 지정되어 있지 않으면 높이 지정 안됨 */
+    height: 60px;
+    /* background-color: aqua; */
+    float: left;
+}
+#login_form_input input[type='text']{
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-width: 1px;
+    border-bottom: none;
+}
+#login_form_input input[type='password']{
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-width: 1px;
+}
+
+#login_form_btn{
+    width: 35%;
+    height: 60px;
+    /* background-color: aquamarine; */
+    float: right;
+}
+#login_form_btn input{
+    width: 80%;
+    height: 80%;
+    margin: 5px 9px;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#login_link{
+    width: 100%;
+    height: 30px;
+    /* background-color: yellow; */
+    text-align: center;
+    font-size: 12px;
+}
+#login_link a{
+    text-decoration: none;
+    color: #333
+}
+
+#login_form_btn input:hover{
+    background-color: rgb(187, 179, 169);
+}
+
+#banner-img{
+    margin-top: 50px;
+    width: 100%;
+}
+
+#chat-img{
+    width: 100%;
+}
+
+footer{
+    width: 100%;
+    height: 80px;
+    background: url(images/footer.jpg) no-repeat center;
+    background-size: 800px;
+}
+
+main ul{
+    padding: 0px;
+    width: 600px;
+    height: 500px;
+    list-style: none;
+}
+main ul li{
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    float: left;
+    text-align: center;
+}
+main ul li img{
+    width: 100%;
+
+}
