@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운메뉴</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style: none;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .submenu{
+            /* 부모영역을 벗어나면 숨김처리 */
+            overflow: hidden;
+        }
+
+        nav .menu li{
+            width: 200px;
+            /* 하위메뉴가 겹침현상 */
+            /* height: 30px; */
+            /* background-color: cornflowerblue; */  /* // li에 background-color을 주면 sub메뉴의 좌측을 모두 채움*/
+            position: relative;
+            float: left;
+        }
+        
+        nav .menu li a{
+            /* 인라인 요소이므로 크기를 지정하기위해 속성 변경 */
+            display: inline-block;
+            width: 100%;
+            background-color: cornflowerblue;
+            line-height: 30px;
+            font-size: 1.2em;
+            font-weight: 800;
+            padding: 20px;
+
+            text-align: center;
+        }
+
+        nav .menu li a:hover{
+            background-color: cadetblue;
+            color: white;
+        }
+
+        nav .menu .submenu li{
+            padding-left: 20px;
+
+        }
+
+        nav .menu .submenu li a{
+            font-size: 1em;
+            font-weight: 700;
+        }
+
+        nav .menu .submenu{
+            /* 화면에서 숨김 */
+            /* display: none; */
+            max-height: 0px;
+
+            transition: 2s;
+        }
+
+        /* 
+        우선순위에 의해
+        인라인스타일 > id스타일 > class스타일 > 태그스타일
+        // 클래스 안의 클래스가 그냥 클래스보다 우선순위가 높음.
+            따라서 경로를 지정할 때 .menu .submenu 경로에 display: none; 으로 지정되어 있으므로
+            .menu를 앞에 넣어주지 않으면 우선순위에서 밀려 display: block; 이 실행되지 못함
+         */
+        nav .menu li a:hover + .submenu, .menu .submenu:hover{
+            /* display를 block으로 할 경우 
+                height:auto로 할 경우    
+                transition이 실행 안됨 */
+            /* display: block; */
+            /* height: auto; */
+            max-height: 500px;
+        }
+
+        .menu li a span{
+            position: absolute;
+            right: 10px;
+            transition: 1s;
+            color: white;
+        }
+
+        nav .menu li a:hover span{
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 네이게이션 영역 -->
+        <nav>
+            <!-- ul>(li>a{메뉴$})*5 -->
+            <ul class='menu'>
+                <li><a href="#">메뉴1</a></li>
+                <li>
+                    <a href="#">메뉴2<span>+</span></a>
+                    <!-- 서브메뉴 -->
+                    <ul class='submenu'>
+                        <li><a href="#">서브메뉴2-1</a></li>
+                        <li><a href="#">서브메뉴2-2</a></li>
+                        <li><a href="#">서브메뉴2-3</a></li>
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="#">메뉴3<span>+</span></a>
+                    <!-- 서브메뉴 -->
+                    <ul class='submenu'>
+                        <li><a href="#">서브메뉴3-1</a></li>
+                        <li><a href="#">서브메뉴3-2</a></li>
+                        <li><a href="#">서브메뉴3-3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
