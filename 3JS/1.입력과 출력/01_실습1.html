@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            border: 1px solid black;
+            width: 250px;
+            height: 80px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button onclick='changeCm()'>인치를 센치로 변환하기</button>
+    <div id='div'>
+
+    </div>
+    <script>
+        function changeCm(){
+            inch = prompt('인치값');
+            cm = inch*2.54;
+            
+            document.querySelector('#div').innerHTML=`inch : ${inch}inch<br>cm : ${cm}cm`;
+        }
+    </script>
+</body>
+</html>

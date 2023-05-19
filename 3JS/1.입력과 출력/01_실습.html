@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요 실습 문제</title>
+    <style>
+        .div-test {
+            border: 1px solid;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+
+        #area {
+            border: 1px solid;
+            width: 300px;
+            height: 200px;
+            margin-top: 5px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>개요 실습 문제</h1>
+
+    <hr>
+
+    <h2>문제 1. 색상 조절하기</h2>
+
+    <p>
+        색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
+    </p>
+    <div id="div1" class="div-test"></div>
+    <input id="selectColor" type="color">
+    <button onclick="changeColor();">변경</button>
+
+    <script>
+        function changeColor(){
+            // # : 아이디 선택자
+            // var selectColorValue = document.querySelector('#selectColor').value;
+            // document.querySelector('#div1').style.backgroundColor=selectColorValue;
+
+            // 선생님은 이렇게 하셨다.
+            var div1 = document.querySelector('#div1');
+            var selectColor = document.querySelector('#selectColor');
+            // div1.style : 엘리먼트의 Inline Css
+            // div1.style.backgroundColor
+
+            //  selectColor의 색상값을 변수에 저장
+            var color = selectColor.value;
+            var boxColor = div1.style.backgroundColor;   
+
+            // const valueToHex = function(val) { 
+            //     var hex = Number(val).toString(16);
+            //     return hex.length === 1 ? '0' + hex : hex;
+            // };
+
+            //     const rgbToHex = function(r, g, b) {
+            //     return (valueToHex(r) + valueToHex(g) + valueToHex(b));
+            // }  // rgb가 붙어 rgb(값)으로 나와 매개변수로 적합하지 않았다
+
+
+            
+            console.log(color);
+            console.log(boxColor);
+            // console.log(rgbToHex(boxColor));
+            // console.log(rgbToHex(114, 55, 55));
+            
+            // 1. 선택된 색상과 박스의 색상이 같다면 메시지 처리
+            // 2. 박스의 크기를 200*200으로 변경
+            div1.style.width='200px';
+            div1.style.height='200px';
+            
+            // color 은 #000000 타입으로 나오고, boxColor은 rgb타입으로 나와서 같은 경우가 나올 수 없다.
+            if(color == boxColor){
+                alert('같은 색상 입니다.');
+            }else{
+                div1.style.backgroundColor=color; 
+                // 박스의 배경 색상을 변경
+            }
+
+            
+        }
+    </script>
+
+    <hr>
+    
+    <h2>문제 2. 크기 변경하기</h2>
+    <p>
+        버튼에 따라 크기 조절이 가능하도록 만들기
+    </p>
+    <div id="div2" class="div-test"></div>
+    <button onclick="setSize('1');">50X50</button>
+    <button onclick="setSize('2');">원본(100X100)</button>
+    <button onclick="setSize('3');">200X200</button>
+
+    <script>
+        function setSize(id){
+            var div2 = document.querySelector('#div2');
+            if(id == '1'){
+                // 코드 작성
+                div2.style.width = '50px';
+                div2.style.height = '50px';
+                console.log(id);
+            } else if(id == '2'){
+                div2.style.width = '100px';
+                div2.style.height = '100px';
+                console.log(id);
+            } else if(id == '3'){
+                div2.style.width = '200px';
+                div2.style.height = '200px';
+                console.log(id);
+            } 
+        }
+    </script>   
+
+    <hr>
+
+    <h2>문제 3. HTML 태그에 접근</h2>
+    <p>
+        텍스트 박스로 입력받은 데이터를 가져와서 출력하기 <br>
+        (단, 구매자는 태그이름, 상품명은 아이디, 구매 가격은 name값으로 접근)
+    </p>
+
+    <label>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요."></label> 
+
+    <br><br>
+
+    <label>상품명 : <input type="text" id="pName" placeholder="구매 상품명을 입력하세요."></label>
+
+    <br><br>
+
+    <label>가격 : <input type="text" name="price" placeholder="구매 가격을 입력하세요."></label>
+
+    <br><br>
+
+    <button onclick="printValue();">입력값 출력하기</button>
+
+    <div id="area"></div>
+
+    <script>
+        function printValue(){
+            //  // 이미 input 요소가 앞에 있었기 때문에 index를 0은 문제3의 input 값이 아님.
+            var i1 = document.getElementsByTagName('input')[1].value;
+            var i2 = document.getElementsByTagName('input')[2].value;
+            var i3 = document.getElementsByTagName('input')[3].value;
+            console.log(i1);
+            console.log(i2);
+            console.log(i3);
+            document.querySelector('#area').innerHTML = `${i1}, ${i2}, ${i3}`
+        }
+    </script>
+    
+
+    <hr>
+
+    <h2>문제 4. 테이블 만들기</h2>
+    <p>
+        prompt()로 사용자로부터 행과 열의 개수를 입력받아 테이블 만들기 <br>
+        아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블 포함한다.
+    </p>
+
+    <button onclick="makeTable();">테이블 생성</button>
+
+    <div id="div3" style="margin-top: 10px;"></div>
+
+    <script>
+        // 함수 생성
+        // 사용자로부터 입력받는다
+        // 행의 갯수, 열의 갯수
+        // 콘솔창에 출력
+        // var table = "<table border='1'>"
+        //             + "<tr> <td></td> </tr>"
+        //             + "</table>"
+        function makeTable(){
+            var table = "<table border='1'>";
+            var tabley = '';
+            var a = prompt('행의 수');
+            var b = prompt('열의 수');
+
+            console.log(a, b);
+
+            // table += '<tr>';
+            
+            //         table += '<td>컬럼1';
+            //         table += '</td>';
+                
+            // table += '</tr>';
+
+            // table += '</table>';
+
+            for(var i=0; i<b; i++){
+                tabley += '<td>컬럼</td>';
+            }
+
+            for(var j=0; j<a; j++){
+                table += '<tr>' + tabley + '</tr>'
+            }
+
+            table += '</table>';
+            
+            // for(var j=0; j<b; j++){
+            //     table += '<tr>';
+            //     for(var i=0; i<a; i++){
+            //         table += `<td>컬럼${j}-${i}`;
+            //         table += '</td>';
+            //     }
+            //     table += '</tr>';
+            // }
+            // table += '</table>';
+
+            document.querySelector('#div3').innerHTML=table;
+        }
+    </script>
+
+
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        .wrapper{
+            border: 1px solid #ccc;
+            padding: 10px;
+            /* 그리드 컨테이너 지정 */
+            display: grid;
+            /* 커럼의 갯수와 크기 지정 
+                px 고정단위 이므로 컨텐츠가 길어질 경우 짤림 현상이 있을 수 있음    
+            */
+            grid-template-columns: 200px 200px 200px;
+            /* repeat(갯수, 크기) */
+            /* 너비가 200px 3개 */
+            grid-template-columns: repeat(3, 200px);
+            /* fr(fraction단위 ) : 그리드 컨테이너의 여유공간을 비율로 나눠 설정 */
+            grid-template-columns: repeat(3, 1fr);
+            
+            /* 행의 갯수와 크기 지정 */
+            /* 최대값 최소값 지정 */
+            grid-template-rows: 100px;
+            /* minmax(최소값, 최대값) */
+            grid-template-rows: repeat(2, minmax(100px, auto));
+
+            /* 줄 간격, 컬럼 간격 */
+            gap: 10px 20px;
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+        .item{
+            padding: 10px;
+            background-color: #eee;
+        }
+        /* odd 홀수 / even 짝수 */
+        .item:nth-child(even){
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.wrapper>div.item*5 -->
+    <div class="wrapper">
+        <div class="item">Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.</div>
+        <div class="item">Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.</div>
+        <div class="item">Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.</div>
+        <div class="item">Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.</div>
+        <div class="item">Ipsum duis aliquip aliquip sint occaecat nisi sint quis pariatur amet.</div>
+    </div>
+</body>
+</html>

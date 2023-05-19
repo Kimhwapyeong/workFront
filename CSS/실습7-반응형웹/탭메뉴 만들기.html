@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴</title>
+    <style>
+        #tabMenu input[type=radio]{
+            display: none;
+        }
+
+        #tabMenu label{
+            /* border: 1px solid black; */
+            display: inline-block;
+            padding: 2px 20px;
+            margin: 0px;
+            /* font-weight: 600; */
+            color: #ccc;
+        }
+
+        #tabMenu label:hover{
+            color: black;
+            font-weight: 600;
+        }
+        /* 활성화된(radio버튼이 체크된 상태) 탭 메뉴 */
+        #tabMenu input:checked + label{
+            border: 1px solid #ccc;
+            background-color: #eee;
+            color: darkred;
+        }
+
+        .tabContent{
+            width: 100%;
+            display: none;
+            border-top: 1px solid #ccc;
+            padding: 0px 20px;
+            line-height: 2;
+            position: absolute;
+            left: 0px;
+            top: 26px;
+        }
+        /* // 형제이므로 ~을 사용해야 한다! */
+        #tab_btn_notice:checked ~ #notice
+        , #tab_btn_gallery:checked ~ #gallery{
+            display: block;
+        }
+        #contents{
+            width: 500px;
+        }
+        #tabMenu{
+            width: 100%;
+            position: relative;
+        }
+        #gallery ul li{
+            display: inline;
+        }
+        #gallery ul li img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id='contents'>
+        <div id='tabMenu'>
+
+        <input type="radio" name="tabs" id="tab_btn_notice" checked>
+        <!-- 라벨이 선택되도 checked되어진다. -->
+        <label for="tab_btn_notice">공지사항</label>
+        <input type="radio" name="tabs" id="tab_btn_gallery">
+        <label for="tab_btn_gallery">갤러리</label>
+        <!-- 공지사항 -->
+        <article id='notice' class='tabContent'>
+            <h2>공지사항</h2>
+            <ul>
+                <li>게시글1</li>
+                <li>게시글2</li>
+                <li>게시글3</li>
+                <li>게시글4</li>
+                <li>게시글5</li>
+            </ul>
+        </article>
+
+        <!-- 갤러리 -->
+        <article id='gallery' class='tabContent'>
+            <h2>갤러리</h2>
+            <ul>
+                <li><img src="images/cup-1.jpg" alt=""></li>
+                <li><img src="images/cup-2.jpg" alt=""></li>
+                <li><img src="images/cup-3.jpg" alt=""></li>
+                <li><img src="images/cup-4.jpg" alt=""></li>
+            </ul>
+        </article>
+        </div>
+    </div>
+
+</body>
+</html>
