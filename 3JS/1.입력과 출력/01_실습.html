@@ -55,7 +55,7 @@
 
             //  selectColor의 색상값을 변수에 저장
             var color = selectColor.value;
-            var boxColor = div1.style.backgroundColor;   
+            var boxColor = getComputedStyle(div1).backgroundColor;
 
             // const valueToHex = function(val) { 
             //     var hex = Number(val).toString(16);
@@ -65,21 +65,27 @@
             //     const rgbToHex = function(r, g, b) {
             //     return (valueToHex(r) + valueToHex(g) + valueToHex(b));
             // }  // rgb가 붙어 rgb(값)으로 나와 매개변수로 적합하지 않았다
-
-
             
             console.log(color);
+            // 16진수 숫자를 rgb로 변경
+            var r = parseInt(color.substr(1,2), 16);
+            var g = parseInt(color.substr(3,2), 16);
+            var b = parseInt(color.substr(5,2), 16);
+            var rgbColor = `rgb(${r}, ${g}, ${b})`;
+
             console.log(boxColor);
+            console.log(rgbColor);
             // console.log(rgbToHex(boxColor));
             // console.log(rgbToHex(114, 55, 55));
             
-            // 1. 선택된 색상과 박스의 색상이 같다면 메시지 처리
             // 2. 박스의 크기를 200*200으로 변경
             div1.style.width='200px';
             div1.style.height='200px';
             
             // color 은 #000000 타입으로 나오고, boxColor은 rgb타입으로 나와서 같은 경우가 나올 수 없다.
-            if(color == boxColor){
+            // 0522 해결(?) 완료
+            // 1. 선택된 색상과 박스의 색상이 같다면 메시지 처리
+            if(rgbColor == boxColor){
                 alert('같은 색상 입니다.');
             }else{
                 div1.style.backgroundColor=color; 
