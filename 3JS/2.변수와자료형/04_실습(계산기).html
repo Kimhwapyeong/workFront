@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 실습</title>
+    <style>
+		table{
+			border: 3px solid blue;
+		}
+		table tr td {
+			/* border: 1px solid blue; */
+		}
+
+		div {
+			/* border: 1px solid pink; */
+			overflow: hidden;
+		}
+
+		button {
+			font-size: 1.5em;
+			font-weight: bold;
+			width: 50px;
+			height: 50px;
+		}
+
+		#result {
+			box-sizing: border-box;
+			height: 50px;
+			font-size: 2em;
+			font-weight: bold;
+			text-align: right;
+			border: 1px solid black;
+			width: 212px;
+			padding-right: 10px;
+		}
+	</style>
+</head>
+<body>
+    <h1>계산기 실습</h1>
+
+    <hr>
+
+    <div>
+		<table>
+			<tr>
+				<td colspan="4">
+					<div id="result">0</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="left" onclick='buttonClick(this.innerHTML)'>(</button>
+				</td>
+				<td>
+					<button id="right" onclick='buttonClick(this.innerHTML)'>)</button>
+				</td>
+				<td>
+					<button id="percent" onclick='buttonClick(this.innerHTML)'>%</button>
+				</td>
+				<td>
+					<button id="clear" onclick='buttonClick(this.innerHTML)'>AC</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="seven" onclick='buttonClick(this.innerHTML)'>7</button>
+				</td>
+				<td>
+					<button id="eight" onclick='buttonClick(this.innerHTML)'>8</button>
+				</td>
+				<td>
+					<button id="nine" onclick='buttonClick(this.innerHTML)'>9</button>
+				</td>
+				<td>
+					<button id="devide" onclick='buttonClick(this.innerHTML)'>/</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="four" onclick='buttonClick(this.innerHTML)'>4</button>
+				</td>
+				<td>
+					<button id="five" onclick='buttonClick(this.innerHTML)'>5</button>
+				</td>
+				<td>
+					<button id="six" onclick='buttonClick(this.innerHTML)'>6</button>
+				</td>
+				<td>
+					<button id="astric" onclick='buttonClick(this.innerHTML)'>*</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="one" onclick='buttonClick(this.innerHTML)'>1</button>
+				</td>
+				<td>
+					<button id="two" onclick='buttonClick(this.innerHTML)'>2</button>
+				</td>
+				<td>
+					<button id="three" onclick='buttonClick(this.innerHTML)'>3</button>
+				</td>
+				<td>
+					<button id="minus" onclick='buttonClick(this.innerHTML)'>-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="zero" onclick='buttonClick(this.innerHTML)'>0</button>
+				</td>
+				<td>
+					<button id="dot" onclick='buttonClick(this.innerHTML)'>.</button>
+				</td>
+				<td>
+					<button id="equal" onclick='buttonClick(this.innerHTML)'>=</button>
+				</td>
+				<td>
+					<button id="plus" onclick='buttonClick(this.innerHTML)'>+</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<script>
+		
+		let buttons = document.getElementsByTagName('button');
+		let inn = '';
+		for(button of buttons){
+			// console.log(button);
+			button.addEventListener('click', function(){
+				console.log('addEventListener', this.innerHTML);
+			});
+		}
+
+		function buttonClick(buttonTxt){
+			console.log(buttonTxt);
+			// 값이 출력되는 요소
+			let result = document.getElementById('result');
+
+			if(buttonTxt == 'AC'){
+				// result를 0으로 초기화
+				result.innerHTML = '0';
+			} else if (buttonTxt == '='){
+				// result 계산
+				result.innerHTML = eval(result.innerHTML);
+			} else {
+				// 선택된 버튼의 txt값을 result에 추가
+				if(result.innerHTML == '0'){
+					// 초기화
+					result.innerHTML = buttonTxt;
+				}else{
+					// 연결해서 입력
+					result.innerHTML += buttonTxt;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

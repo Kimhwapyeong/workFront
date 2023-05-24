@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 실습2</title>
+    <style>
+		table{
+			border: 3px solid blue;
+		}
+		table tr td {
+			/* border: 1px solid blue; */
+		}
+
+		div {
+			/* border: 1px solid pink; */
+			overflow: hidden;
+		}
+
+		button {
+			font-size: 1.5em;
+			font-weight: bold;
+			width: 50px;
+			height: 50px;
+		}
+
+		#result {
+			box-sizing: border-box;
+			height: 50px;
+			font-size: 2em;
+			font-weight: bold;
+			text-align: right;
+			border: 1px solid black;
+			width: 212px;
+			padding-right: 10px;
+		}
+	</style>
+</head>
+<body>
+    <h1>계산기 실습</h1>
+
+    <hr>
+
+    <div>
+		<table>
+			<tr>
+				<td colspan="4">
+					<div id="result">0</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="left">(</button>
+				</td>
+				<td>
+					<button id="right">)</button>
+				</td>
+				<td>
+					<button id="percent">%</button>
+				</td>
+				<td>
+					<button id="clear">AC</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="seven">7</button>
+				</td>
+				<td>
+					<button id="eight">8</button>
+				</td>
+				<td>
+					<button id="nine">9</button>
+				</td>
+				<td>
+					<button id="devide">/</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="four">4</button>
+				</td>
+				<td>
+					<button id="five">5</button>
+				</td>
+				<td>
+					<button id="six">6</button>
+				</td>
+				<td>
+					<button id="astric">*</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="one">1</button>
+				</td>
+				<td>
+					<button id="two">2</button>
+				</td>
+				<td>
+					<button id="three">3</button>
+				</td>
+				<td>
+					<button id="minus">-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="zero">0</button>
+				</td>
+				<td>
+					<button id="dot">.</button>
+				</td>
+				<td>
+					<button id="equal">=</button>
+				</td>
+				<td>
+					<button id="plus">+</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<script>
+		
+		// 화면에 있는 버튼을 모두 선택합니다.
+		let buttons = document.getElementsByTagName('button');
+
+		// 반복문을 이용해서 버튼을 하나씩 꺼내와서 클릭 이벤트를 추가
+		for(button of buttons){
+			// console.log(button);
+			button.addEventListener('click', function(){
+				// console.log('addEventListener', this.innerHTML);
+				buttonClick(this.innerHTML);
+			});
+		}
+
+		function buttonClick(buttonTxt){
+			// console.log(buttonTxt);
+			// 값이 출력되는 요소
+			let result = document.getElementById('result');
+
+			if(buttonTxt == 'AC'){
+				// result를 0으로 초기화
+				result.innerHTML = '0';
+			} else if (buttonTxt == '='){
+				// result 계산
+				result.innerHTML = eval(result.innerHTML);
+			} else {
+				// 선택된 버튼의 txt값을 result에 추가
+				if(result.innerHTML == '0'){
+					// 초기화
+					result.innerHTML = buttonTxt;
+				}else{
+					// 연결해서 입력
+					result.innerHTML += buttonTxt;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
