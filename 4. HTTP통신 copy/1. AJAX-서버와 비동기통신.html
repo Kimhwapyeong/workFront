@@ -10,5 +10,26 @@
 <body>
   <div id="result"></div>
 
+  <script>
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('get', 'json/student.json');
+
+    xhr.send();
+
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState === 4 && xhr.status === 200){
+        console.log(xhr.readyState)
+        let student = JSON.parse(xhr.responseText);
+
+        result.innerHTML = `<h1>${student.name}</h1>
+                            <ul>
+                              <li>${student.major}</li>
+                              <li>${student.grade}</li>
+                            </ul>`;
+      } 
+    }
+
+  </script>
 </body>
 </html>
