@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+    <script src='5.AJAX-공공데이터활용-kakaoMap 마커클러스터러.js'></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7f4e3f6830b08acddb284ad285c5c0d"></script>
+</head>
+<body>
+    <div id="map" style="width:100%;height:350px;"></div>
+    <form id='campForm'>
+        <div class='hidden'>
+            <label for="MobileOS">MobileOS : </label><input type="text" id='MobileOS' name='MobileOS' value='ETC'><br>
+            <label for="MobileApp">MobileApp : </label><input type="text" id='MobileApp' name='MobileApp' value='AppTest'><br>
+            <label for="serviceKey">serviceKey : </label><input type="text" id='serviceKey' name='serviceKey' value='PqHPI2IhNkQ7DjqQouykBrpFXuduMw4HZojXDBnkFgosEBPwgo6FJ4mNS4g4SmoZhKWb2hE897eEcqA9pMXJEw%3D%3D'><br>
+            <label for="mapX">mapX : </label><input type="text" id='mapX' name='mapX' value='128.6142847'><br>
+            <label for="mapY">mapY : </label><input type="text" id='mapY' name='mapY' value='36.0345423'><br>
+            <label for="type">type : <input type="text" name="_type" id="type" value='json'></label><br>
+
+        </div>
+        <label for="numOfRows">numOfRow : </label><input type="text" id='numOfRows' name='numOfRows' value='10'><br>
+        <label for="pageNo">pageNo : </label><input type="text" id='pageNo' name='pageNo' value='1'><br>
+        <label for="radius">radius : </label><input type="text" id='radius' name='radius' value='10000'><br>
+        <!-- _type : json 형식으로 받아오기 위해 _type에 json값을 넣어 줍니다. -->
+        <button id='btn'>캠핑장 정보 조회</button>
+    </form>
+    <div id='box'></div>
+</body>
+</html>

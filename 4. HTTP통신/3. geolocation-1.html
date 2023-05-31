@@ -46,7 +46,10 @@
         };
 
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
+    
+    for(key in navigator){
+      console.log('key : ', key, 'value : ', navigator[key]);
+    }
     getLocation.addEventListener('click', () => {
       if ("geolocation" in navigator) {
         /* 위치정보 사용 가능 */
