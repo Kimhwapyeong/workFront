@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간은금이다</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class='area' id='area1'></div>
+    <script>
+        timerId = window.setInterval(()=>{
+            // 현재 날짜, 시간 정보를 담은 객체   
+            let date = new Date();
+            
+            area1.innerHTML = `${date.getHours()} : ${date.getMinutes()} : `
+                                + `<span id='second'>${date.getSeconds()}</span>` // date.toTimeString();
+
+        }, 1000);
+    </script>
+</body>
+</html>
