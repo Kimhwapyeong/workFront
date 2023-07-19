@@ -65,7 +65,7 @@ window.addEventListener('load', ()=>{
     })
 
     btn3.addEventListener('click', ()=>{
-        let str = 'a aa aaa aaaa';
+        let str = 'ab aa aaa aaaa';
         area3.innerHTML = '<h3>메타문자';
 
         /*
@@ -75,7 +75,7 @@ window.addEventListener('load', ()=>{
             +
                 앞선 패턴이 최소 한 번 이상 반복되는 문자열을 의미한다    
             ?
-                앞선 패턴이 최대 한 번 반복되는 문자열을 의미한다
+                앞선 패턴이 최대 한 번 존재하는 문자열을 의미한다
         */
         area3.innerHTML += '/a{1,2}/g : ' + str.replace(/a{1,2}/g, '($&)');
         // {3, 3}
